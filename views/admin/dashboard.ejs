@@ -1,0 +1,50 @@
+<section>
+  <div class="container">
+    <h2 class="section-title"><%= __('admin.dashboard_title') %></h2>
+    <p style="text-align: center; margin-bottom: 2rem;">
+      <%= __('admin.hello') %>, <%= user.username %>! 
+      <a href="/admin/logout" class="btn btn-secondary" style="margin-left: 1rem;"><%= __('admin.logout') %></a>
+    </p>
+    
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th><%= __('applicants_form.fio') %></th>
+          <th>Email</th>
+          <th><%= __('applicants_form.phone') %></th>
+          <th><%= __('applicants_form.specialty') %></th>
+          <th><%= __('applicants_form.comment') %></th>
+          <th><%= __('applicants_form.certificate') %></th>
+          <th>Дата</th>
+          <th>Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% applicants.forEach(a => { %>
+          <tr>
+            <td><%= a.id %></td>
+            <td><%= a.fio %></td>
+            <td><%= a.email %></td>
+            <td><%= a.phone %></td>
+            <td><%= a.specialty %></td>
+            <td><%= a.comment %></td>
+            <td>
+              <% if (a.certificate_file) { %>
+                <a href="/uploads/<%= a.certificate_file %>" target="_blank">Скачать PDF</a>
+              <% } else { %>
+                Не загружен
+              <% } %>
+            </td>
+            <td><%= a.created_at.toLocaleString() %></td>
+            <td>
+              <form method="POST" action="/admin/delete/<%= a.id %>" onsubmit="return confirm('Удалить заявку?');" style="margin: 0;">
+                <button type="submit" class="btn btn-danger" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Удалить</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>

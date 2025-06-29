@@ -1,0 +1,52 @@
+<section>
+  <div class="container">
+    <div class="form-container">
+      <h2 class="form-title"><%= __('applicants_form.title') %></h2>
+      
+      <% if (typeof message !== 'undefined' && message) { %>
+        <div class="form-message success"><%= message %></div>
+      <% } %>
+      
+      <form id="applicantForm" method="POST" action="/applicants" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="fio"><%= __('applicants_form.fio') %>:</label>
+          <input type="text" id="fio" name="fio" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone"><%= __('applicants_form.phone') %>:</label>
+          <input type="tel" id="phone" name="phone" required pattern="[0-9\-\+\s\(\)]{10,20}">
+        </div>
+
+        <div class="form-group">
+          <label for="specialty"><%= __('applicants_form.specialty') %>:</label>
+          <select id="specialty" name="specialty" required>
+            <option value="">-- <%= __('applicants_form.choose') %> --</option>
+            <option value="it">IT</option>
+            <option value="economics"><%= __('applicants_form.economics') %></option>
+            <option value="pedagogy"><%= __('applicants_form.pedagogy') %></option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="certificate"><%= __('applicants_form.certificate') %>:</label>
+          <input type="file" id="certificate" name="certificate" accept=".pdf" required>
+        </div>
+
+        <div class="form-group">
+          <label for="comment"><%= __('applicants_form.comment') %>:</label>
+          <textarea id="comment" name="comment" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%;"><%= __('applicants_form.submit') %></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script src="/js/applicantForm.js"></script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title !== 'undefined' ? title : 'Туркестан Болашак' %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">Туркестан Болашак</a>
+        <nav>
+          <ul>
+            <li><a href="/"><%= __('nav.home') %></a></li>
+            <li><a href="/about"><%= __('nav.about') %></a></li>
+            <li><a href="/activity"><%= __('nav.activity') %></a></li>
+            <li><a href="/specialties"><%= __('nav.specialties') %></a></li>
+            <li><a href="/students"><%= __('nav.students') %></a></li>
+            <li><a href="/applicants"><%= __('nav.applicants') %></a></li>
+            <li><a href="/news"><%= __('nav.news') %></a></li>
+            <li><a href="/gallery"><%= __('nav.gallery') %></a></li>
+            <li><a href="/teachers"><%= __('nav.teachers') %></a></li>
+            <li><a href="/contests"><%= __('nav.contests') %></a></li>
+            <li><a href="/contacts"><%= __('nav.contacts') %></a></li>
+          </ul>
+        </nav>
+        <div class="language-switcher">
+          <a href="/lang/ru" class="lang-btn <%= locale === 'ru' ? 'active' : '' %>">RU</a>
+          <a href="/lang/kz" class="lang-btn <%= locale === 'kz' ? 'active' : '' %>">KZ</a>
+          <a href="/lang/en" class="lang-btn <%= locale === 'en' ? 'active' : '' %>">EN</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <aside class="banner">
+      <img src="/banner/banner-placeholder.png" alt="Баннер" style="width:80px; height:300px;">
+      <!-- 160x600 мм = 480x1800 px @300dpi, но для web делаем пропорционально меньше -->
+    </aside>
+    <section class="content">
+      <%- body %>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><%= __('footer.about') %></h3>
+          <a href="/about"><%= __('nav.about') %></a>
+          <a href="/activity"><%= __('nav.activity') %></a>
+          <a href="/specialties"><%= __('nav.specialties') %></a>
+        </div>
+        <div class="footer-section">
+          <h3><%= __('footer.students') %></h3>
+          <a href="/students"><%= __('nav.students') %></a>
+          <a href="/applicants"><%= __('nav.applicants') %></a>
+          <a href="/teachers"><%= __('nav.teachers') %></a>
+        </div>
+        <div class="footer-section">
+          <h3><%= __('footer.media') %></h3>
+          <a href="/news"><%= __('nav.news') %></a>
+          <a href="/gallery"><%= __('nav.gallery') %></a>
+          <a href="/contests"><%= __('nav.contests') %></a>
+        </div>
+        <div class="footer-section">
+          <h3><%= __('footer.contact') %></h3>
+          <a href="/contacts"><%= __('nav.contacts') %></a>
+          <p>Email: info@bolashak.edu.kz</p>
+          <p>Тел: +7 (7252) 123-456</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Туркестан Болашак. <%= __('footer.rights') %></p>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/animations.js"></script>
+</body>
+</html>

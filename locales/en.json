@@ -1,0 +1,117 @@
+{
+	"nav": {
+		"home": "Home",
+		"about": "About College",
+		"activity": "Activity",
+		"specialties": "Specialties",
+		"students": "For Students",
+		"applicants": "For Applicants",
+		"contacts": "Contacts",
+		"admin": "Admin",
+		"news": "News",
+		"gallery": "Gallery",
+		"teachers": "Teachers",
+		"contests": "Contests"
+	},
+	"welcome": "Welcome to Turkestan Bolashak College!",
+	"intro": "Here you will find information about our college, specialties, teachers, and student life.",
+	"applicants_form": {
+		"title": "Online Application for Applicants",
+		"fio": "Full Name",
+		"phone": "Phone",
+		"specialty": "Specialty",
+		"choose": "Choose",
+		"economics": "Economics",
+		"pedagogy": "Pedagogy",
+		"certificate": "Certificate (PDF)",
+		"comment": "Comment",
+		"submit": "Submit"
+	},
+	"admin": {
+		"login_title": "Admin Login",
+		"username": "Username",
+		"password": "Password",
+		"login_btn": "Login",
+		"dashboard_title": "Admin Panel: Applicants",
+		"hello": "Hello",
+		"logout": "Logout"
+	},
+	"about": {
+		"title": "About College",
+		"text": "Turkestan Bolashak College is a modern educational institution providing quality education and opportunities for development."
+	},
+	"activity": {
+		"title": "Activity",
+		"text": "Our college actively participates in educational, scientific, and cultural projects."
+	},
+	"specialties": {
+		"title": "Specialties",
+		"text": "We offer in-demand specialties in IT, economics, and pedagogy.",
+		"subtitle": "specialties.subtitle",
+		"cs_description": "specialties.cs_description",
+		"subjects": "specialties.subjects",
+		"cs_subjects": "specialties.cs_subjects",
+		"threshold": "specialties.threshold",
+		"se_description": "specialties.se_description",
+		"se_subjects": "specialties.se_subjects",
+		"bda_description": "specialties.bda_description",
+		"bda_subjects": "specialties.bda_subjects",
+		"cyber_description": "specialties.cyber_description",
+		"cyber_subjects": "specialties.cyber_subjects",
+		"itm_description": "specialties.itm_description",
+		"itm_subjects": "specialties.itm_subjects",
+		"ite_description": "specialties.ite_description",
+		"ite_subjects": "specialties.ite_subjects",
+		"apply_now": "specialties.apply_now"
+	},
+	"students": {
+		"title": "For Students",
+		"text": "Everything for successful studies and vibrant student life!"
+	},
+	"contacts": {
+		"title": "Contacts",
+		"text": "Address: Turkestan, Example St., 1. Tel.: +7 777 123 45 67"
+	},
+	"news": {
+		"title": "News",
+		"text": "Latest college news and important events."
+	},
+	"gallery": {
+		"title": "Gallery / Video",
+		"text": "Photo and video materials about college life."
+	},
+	"teachers": {
+		"title": "Teachers",
+		"text": "Our experienced and qualified teachers."
+	},
+	"contests": {
+		"title": "Contests",
+		"text": "Information about student contests and achievements."
+	},
+	"footer": {
+		"about": "footer.about",
+		"students": "footer.students",
+		"media": "footer.media",
+		"contact": "footer.contact",
+		"rights": "footer.rights"
+	},
+	"home": {
+		"hero_title": "Turkestan Bolashak",
+		"hero_subtitle": "Modern education for future IT industry leaders",
+		"welcome_title": "Welcome to Turkestan Bolashak",
+		"welcome_text": "We offer quality education in information technology and prepare specialists for the digital economy",
+		"cs_description": "Study of programming fundamentals, algorithms and data structures",
+		"se_description": "Software development and project management",
+		"itm_description": "IT project management and technological solutions",
+		"why_choose_title": "Why Choose Us",
+		"advantage_1_title": "Quality Education",
+		"advantage_1_text": "Modern educational programs that meet international standards",
+		"advantage_2_title": "Career Prospects",
+		"advantage_2_text": "High employment rate of graduates in leading IT companies",
+		"advantage_3_title": "International Cooperation",
+		"advantage_3_text": "Partnership with leading universities and companies worldwide",
+		"cta_title": "Ready to Start Your Journey?",
+		"cta_text": "Apply now and become part of our community",
+		"apply_now": "Apply Now"
+	}
+}

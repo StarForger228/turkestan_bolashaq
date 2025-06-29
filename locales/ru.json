@@ -1,0 +1,117 @@
+{
+	"nav": {
+		"home": "Главная",
+		"about": "О колледже",
+		"activity": "Деятельность",
+		"specialties": "Специальности",
+		"students": "Студентам",
+		"applicants": "Абитуриентам",
+		"contacts": "Контакты",
+		"admin": "Админ",
+		"news": "Новости",
+		"gallery": "Галерея",
+		"teachers": "Преподаватели",
+		"contests": "Конкурсы"
+	},
+	"welcome": "Добро пожаловать в колледж «Туркестан Болашак»!",
+	"intro": "Здесь вы найдёте информацию о нашем колледже, специальностях, преподавателях и студенческой жизни.",
+	"applicants_form": {
+		"title": "Онлайн-заявка для абитуриентов",
+		"fio": "ФИО",
+		"phone": "Телефон",
+		"specialty": "Специальность",
+		"choose": "Выберите",
+		"economics": "Экономика",
+		"pedagogy": "Педагогика",
+		"certificate": "Аттестат (PDF)",
+		"comment": "Комментарий",
+		"submit": "Отправить"
+	},
+	"admin": {
+		"login_title": "Вход для администратора",
+		"username": "Логин",
+		"password": "Пароль",
+		"login_btn": "Войти",
+		"dashboard_title": "Админ-панель: заявки абитуриентов",
+		"hello": "Здравствуйте",
+		"logout": "Выйти"
+	},
+	"about": {
+		"title": "О колледже",
+		"text": "Колледж «Туркестан Болашак» — современное образовательное учреждение, предоставляющее качественное образование и возможности для развития."
+	},
+	"activity": {
+		"title": "Деятельность",
+		"text": "Наш колледж активно участвует в образовательных, научных и культурных проектах."
+	},
+	"specialties": {
+		"title": "Специальности",
+		"text": "Мы предлагаем востребованные специальности в сфере IT, экономики и педагогики.",
+		"subtitle": "specialties.subtitle",
+		"cs_description": "specialties.cs_description",
+		"subjects": "specialties.subjects",
+		"cs_subjects": "specialties.cs_subjects",
+		"threshold": "specialties.threshold",
+		"se_description": "specialties.se_description",
+		"se_subjects": "specialties.se_subjects",
+		"bda_description": "specialties.bda_description",
+		"bda_subjects": "specialties.bda_subjects",
+		"cyber_description": "specialties.cyber_description",
+		"cyber_subjects": "specialties.cyber_subjects",
+		"itm_description": "specialties.itm_description",
+		"itm_subjects": "specialties.itm_subjects",
+		"ite_description": "specialties.ite_description",
+		"ite_subjects": "specialties.ite_subjects",
+		"apply_now": "specialties.apply_now"
+	},
+	"students": {
+		"title": "Студентам",
+		"text": "Всё для успешной учёбы и яркой студенческой жизни!"
+	},
+	"contacts": {
+		"title": "Контакты",
+		"text": "Адрес: г. Туркестан, ул. Примерная, 1. Тел.: +7 777 123 45 67"
+	},
+	"news": {
+		"title": "Новости",
+		"text": "Последние новости колледжа и важные события."
+	},
+	"gallery": {
+		"title": "Галерея / Видео",
+		"text": "Фото- и видеоматериалы о жизни колледжа."
+	},
+	"teachers": {
+		"title": "Преподаватели",
+		"text": "Наши опытные и квалифицированные преподаватели."
+	},
+	"contests": {
+		"title": "Конкурсы",
+		"text": "Информация о конкурсах и достижениях студентов."
+	},
+	"home": {
+		"hero_title": "Туркестан Болашак",
+		"hero_subtitle": "Современное образование для будущих лидеров IT-индустрии",
+		"welcome_title": "Добро пожаловать в Туркестан Болашак",
+		"welcome_text": "Мы предлагаем качественное образование в области информационных технологий и готовим специалистов для цифровой экономики",
+		"cs_description": "Изучение основ программирования, алгоритмов и структур данных",
+		"se_description": "Разработка программного обеспечения и управление проектами",
+		"itm_description": "Управление IT-проектами и технологическими решениями",
+		"why_choose_title": "Почему выбирают нас",
+		"advantage_1_title": "Качественное образование",
+		"advantage_1_text": "Современные программы обучения, соответствующие международным стандартам",
+		"advantage_2_title": "Карьерные перспективы",
+		"advantage_2_text": "Высокий процент трудоустройства выпускников в ведущих IT-компаниях",
+		"advantage_3_title": "Международное сотрудничество",
+		"advantage_3_text": "Партнерство с ведущими университетами и компаниями мира",
+		"cta_title": "Готовы начать свой путь?",
+		"cta_text": "Подайте заявку прямо сейчас и станьте частью нашего сообщества",
+		"apply_now": "Подать заявку"
+	},
+	"footer": {
+		"about": "footer.about",
+		"students": "footer.students",
+		"media": "footer.media",
+		"contact": "footer.contact",
+		"rights": "footer.rights"
+	}
+}

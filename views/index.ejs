@@ -1,0 +1,70 @@
+<section class="hero">
+  <div class="container">
+    <h1><%= __('home.hero_title') %></h1>
+    <p><%= __('home.hero_subtitle') %></p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title"><%= __('home.welcome_title') %></h2>
+    <p class="section-subtitle"><%= __('home.welcome_text') %></p>
+    
+    <div class="content-section">
+      <div class="specialties-grid">
+        <div class="specialty-card fade-in-up">
+          <div class="specialty-code">6B06101</div>
+          <h3>Computer Science</h3>
+          <p><%= __('home.cs_description') %></p>
+          <a href="/specialties" class="btn">Узнать больше</a>
+        </div>
+        
+        <div class="specialty-card fade-in-up">
+          <div class="specialty-code">6B06102</div>
+          <h3>Software Engineering</h3>
+          <p><%= __('home.se_description') %></p>
+          <a href="/specialties" class="btn">Узнать больше</a>
+        </div>
+        
+        <div class="specialty-card fade-in-up">
+          <div class="specialty-code">6B04101</div>
+          <h3>IT Management</h3>
+          <p><%= __('home.itm_description') %></p>
+          <a href="/specialties" class="btn">Узнать больше</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: #f8f9fa;">
+  <div class="container">
+    <h2 class="section-title"><%= __('home.why_choose_title') %></h2>
+    <div class="content-section">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div class="fade-in-up">
+          <h3 style="color: #1a73e8; margin-bottom: 1rem;">🎓 <%= __('home.advantage_1_title') %></h3>
+          <p><%= __('home.advantage_1_text') %></p>
+        </div>
+        <div class="fade-in-up">
+          <h3 style="color: #1a73e8; margin-bottom: 1rem;">💼 <%= __('home.advantage_2_title') %></h3>
+          <p><%= __('home.advantage_2_text') %></p>
+        </div>
+        <div class="fade-in-up">
+          <h3 style="color: #1a73e8; margin-bottom: 1rem;">🌍 <%= __('home.advantage_3_title') %></h3>
+          <p><%= __('home.advantage_3_text') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title"><%= __('home.cta_title') %></h2>
+    <p class="section-subtitle"><%= __('home.cta_text') %></p>
+    <div style="text-align: center;">
+      <a href="/applicants" class="btn" style="font-size: 1.1rem; padding: 1rem 2.5rem;"><%= __('home.apply_now') %></a>
+    </div>
+  </div>
+</section>

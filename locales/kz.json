@@ -1,0 +1,117 @@
+{
+	"nav": {
+		"home": "Басты бет",
+		"about": "Колледж туралы",
+		"activity": "Қызметі",
+		"specialties": "Мамандықтар",
+		"students": "Студенттерге",
+		"applicants": "Талапкерлерге",
+		"contacts": "Байланыс",
+		"admin": "Админ",
+		"news": "Жаңалықтар",
+		"gallery": "Галерея",
+		"teachers": "Оқытушылар",
+		"contests": "Байқаулар"
+	},
+	"welcome": "«Түркістан Болашақ» колледжіне қош келдіңіз!",
+	"intro": "Бұл жерде сіз колледжіміз, мамандықтар, оқытушылар және студенттік өмір туралы ақпарат таба аласыз.",
+	"applicants_form": {
+		"title": "Талапкерлерге онлайн өтінім",
+		"fio": "Аты-жөні",
+		"phone": "Телефон",
+		"specialty": "Мамандық",
+		"choose": "Таңдаңыз",
+		"economics": "Экономика",
+		"pedagogy": "Педагогика",
+		"certificate": "Аттестат (PDF)",
+		"comment": "Пікір",
+		"submit": "Жіберу"
+	},
+	"admin": {
+		"login_title": "Админге кіру",
+		"username": "Логин",
+		"password": "Құпиясөз",
+		"login_btn": "Кіру",
+		"dashboard_title": "Админ-панель: талапкерлердің өтінімдері",
+		"hello": "Сәлеметсіз бе",
+		"logout": "Шығу"
+	},
+	"about": {
+		"title": "Колледж туралы",
+		"text": "«Түркістан Болашақ» колледжі — заманауи білім ордасы, сапалы білім мен дамуға мүмкіндік береді."
+	},
+	"activity": {
+		"title": "Қызметі",
+		"text": "Біздің колледж білім, ғылым және мәдениет жобаларына белсенді қатысады."
+	},
+	"specialties": {
+		"title": "Мамандықтар",
+		"text": "Біз IT, экономика және педагогика салаларында сұранысқа ие мамандықтар ұсынамыз.",
+		"subtitle": "specialties.subtitle",
+		"cs_description": "specialties.cs_description",
+		"subjects": "specialties.subjects",
+		"cs_subjects": "specialties.cs_subjects",
+		"threshold": "specialties.threshold",
+		"se_description": "specialties.se_description",
+		"se_subjects": "specialties.se_subjects",
+		"bda_description": "specialties.bda_description",
+		"bda_subjects": "specialties.bda_subjects",
+		"cyber_description": "specialties.cyber_description",
+		"cyber_subjects": "specialties.cyber_subjects",
+		"itm_description": "specialties.itm_description",
+		"itm_subjects": "specialties.itm_subjects",
+		"ite_description": "specialties.ite_description",
+		"ite_subjects": "specialties.ite_subjects",
+		"apply_now": "specialties.apply_now"
+	},
+	"students": {
+		"title": "Студенттерге",
+		"text": "Табысты оқу мен жарқын студенттік өмір үшін бәрі бар!"
+	},
+	"contacts": {
+		"title": "Байланыс",
+		"text": "Мекенжай: Түркістан қ., Үлгі көшесі, 1. Тел.: +7 777 123 45 67"
+	},
+	"news": {
+		"title": "Жаңалықтар",
+		"text": "Колледждің соңғы жаңалықтары мен маңызды оқиғалар."
+	},
+	"gallery": {
+		"title": "Галерея / Видео",
+		"text": "Колледж өмірінен фото және видео материалдар."
+	},
+	"teachers": {
+		"title": "Оқытушылар",
+		"text": "Біздің тәжірибелі және білікті оқытушыларымыз."
+	},
+	"contests": {
+		"title": "Байқаулар",
+		"text": "Студенттердің байқаулары мен жетістіктері туралы ақпарат."
+	},
+	"footer": {
+		"about": "footer.about",
+		"students": "footer.students",
+		"media": "footer.media",
+		"contact": "footer.contact",
+		"rights": "footer.rights"
+	},
+	"home": {
+		"hero_title": "Түркістан Болашак",
+		"hero_subtitle": "IT-өнеркәсіптің болашақ көшбасшыларына заманауи білім",
+		"welcome_title": "Түркістан Болашакқа қош келдіңіз",
+		"welcome_text": "Біз ақпараттық технологиялар саласында сапалы білім ұсынып, цифрлық экономикаға мамандар дайындаймыз",
+		"cs_description": "Бағдарламалау негіздерін, алгоритмдер мен деректер құрылымын зерттеу",
+		"se_description": "Бағдарламалық қамтамасыз етуді әзірлеу және жобаларды басқару",
+		"itm_description": "IT-жобалар мен технологиялық шешімдерді басқару",
+		"why_choose_title": "Неге бізді таңдайды",
+		"advantage_1_title": "Сапалы білім",
+		"advantage_1_text": "Халықаралық стандарттарға сәйкес заманауи оқу бағдарламалары",
+		"advantage_2_title": "Мансаптық перспективалар",
+		"advantage_2_text": "Жетекші IT-компанияларда түлектерді жұмысқа орналастырудың жоғары пайызы",
+		"advantage_3_title": "Халықаралық ынтымақтастық",
+		"advantage_3_text": "Әлемдегі жетекші университеттер мен компаниялармен серіктестік",
+		"cta_title": "Жолыңызды бастауға дайынсыз ба?",
+		"cta_text": "Қазір өтінім беріп, біздің қоғамдастықтың бөлігі болыңыз",
+		"apply_now": "Өтінім беру"
+	}
+}
