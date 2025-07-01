@@ -86,7 +86,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
   baseURL: "https://openrouter.ai/api/v1"
 });
 
