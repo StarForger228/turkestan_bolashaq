@@ -16,4 +16,20 @@ document.addEventListener('DOMContentLoaded', function() {
   };
   window.addEventListener('scroll', revealOnScroll);
   revealOnScroll();
+
+  // Языковое меню
+  const langToggle = document.getElementById('lang-toggle');
+  const langMenu = document.getElementById('lang-menu');
+  if (langToggle && langMenu) {
+    langToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      langMenu.classList.toggle('hidden');
+    });
+    document.addEventListener('click', function() {
+      langMenu.classList.add('hidden');
+    });
+    langMenu.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  }
 }); 

@@ -1,2 +1,156 @@
-<h2><%= __('teachers.title') %></h2>
-<p><%= __('teachers.text') %></p> 
+<% 
+const lang = locale || 'ru';
+const staff = {
+  ru: {
+    director: { name: "Бегалиев Б.Б.", position: "Директор", img: "/images/teachers/pfp.png" },
+    deputies: [
+      { name: "Бегалиева Ш.М.", position: "Зам. по учебно-производственной работе", img: "/images/teachers/pfp.png" },
+      { name: "Ильясова С.Т.", position: "Зам. по учебной части", img: "/images/teachers/pfp.png" },
+      { name: "Ерсултан А.С.", position: "Зам. по воспитательной работе", img: "/images/teachers/pfp.png" },
+      { name: "Искендиров К.И.", position: "Зам. по практике", img: "/images/teachers/pfp.png" }
+    ],
+    teachers: [
+      { name: "Домаева Г.А.", position: "Информатика", img: "/images/teachers/pfp.png" },
+      { name: "Кенесбаева Г.А.", position: "Каз.язык", img: "/images/teachers/pfp.png" },
+      { name: "Кошан М.Ж.", position: "Математика", img: "/images/teachers/pfp.png" },
+      { name: "Ерденова Ж.Т.", position: "Рус.язык", img: "/images/teachers/pfp.png" },
+      { name: "Жусупова Г.А.", position: "Физическая культура", img: "/images/teachers/pfp.png" },
+      { name: "Ахметов Д.Ж.", position: "Физическая культура", img: "/images/teachers/pfp.png" },
+      { name: "Куандыкова Ш.Б.", position: "Библиотекарь", img: "/images/teachers/pfp.png" },
+      { name: "Мырзалиев Б.С.", position: "Экономика", img: "/images/teachers/pfp.png" },
+      { name: "Садықов С.", position: "История", img: "/images/teachers/pfp.png" },
+      { name: "Джаздыкбаева М.Б.", position: "Педагогика", img: "/images/teachers/pfp.png" },
+      { name: "Мергенбаев Е.П.", position: "Право", img: "/images/teachers/pfp.png" },
+      { name: "Ауезов Б.Н.", position: "Педагогика", img: "/images/teachers/pfp.png" },
+      { name: "Жумадуллаева А.А.", position: "Педагогика", img: "/images/teachers/pfp.png" },
+      { name: "Исмаилова Ж.А.", position: "Каз.язык", img: "/images/teachers/pfp.png" },
+      { name: "Султанбек М.Ж.", position: "Педагогика", img: "/images/teachers/pfp.png" },
+      { name: "Абдуллина Г.Т.", position: "Педагогика", img: "/images/teachers/pfp.png" },
+      { name: "Кайбульдаева Г.А.", position: "Педагогика", img: "/images/teachers/pfp.png" },
+      { name: "Джумадуллаева А.Н.", position: "История", img: "/images/teachers/pfp.png" },
+      { name: "Жаркинбаева Д.С.", position: "Психология", img: "/images/teachers/pfp.png" },
+      { name: "Сахытжан С.О.", position: "Нач. классы", img: "/images/teachers/pfp.png" },
+      { name: "Айдарова Ф.К.", position: "Дошкольное образование", img: "/images/teachers/pfp.png" },
+      { name: "Джаякбаева Д.С.", position: "История", img: "/images/teachers/pfp.png" },
+      { name: "Жаныкулов Н.О.", position: "Философия", img: "/images/teachers/pfp.png" },
+      { name: "Матиева З.Ш.", position: "Англ.язык", img: "/images/teachers/pfp.png" },
+      { name: "Алиева Г.Д.", position: "Экономика", img: "/images/teachers/pfp.png" },
+      { name: "Пернебек С.Н.", position: "Биология", img: "/images/teachers/pfp.png" }
+    ]
+  },
+  kz: {
+    director: { name: "Бегалиев Б.Б.", position: "Директор", img: "/images/teachers/director.jpg" },
+    deputies: [
+      { name: "Бегалиева Ш.М.", position: "Оқу-өндірістік орынбасары", img: "/images/teachers/deputy1.jpg" },
+      { name: "Ильясова С.Т.", position: "Оқу ісі орынбасары", img: "/images/teachers/deputy2.jpg" },
+      { name: "Ерсултан А.С.", position: "Тәрбие орынбасары", img: "/images/teachers/deputy3.jpg" },
+      { name: "Искендиров К.И.", position: "Практика орынбасары", img: "/images/teachers/deputy4.jpg" }
+    ],
+    teachers: [
+      { name: "Домаева Г.А.", position: "Информатика", img: "/images/teachers/teacher1.jpg" },
+      { name: "Кенесбаева Г.А.", position: "Қазақ тілі", img: "/images/teachers/teacher2.jpg" },
+      { name: "Қошан М.Ж.", position: "Математика", img: "/images/teachers/teacher3.jpg" },
+      { name: "Ерденова Ж.Т.", position: "Орыс тілі", img: "/images/teachers/teacher4.jpg" },
+      { name: "Жусупова Г.А.", position: "Дене тәрбиесі", img: "/images/teachers/teacher5.jpg" },
+      { name: "Ахметов Д.Ж.", position: "Дене тәрбиесі", img: "/images/teachers/teacher6.jpg" },
+      { name: "Куандыкова Ш.Б.", position: "Кітапханашы", img: "/images/teachers/teacher7.jpg" },
+      { name: "Мырзалиев Б.С.", position: "Экономика", img: "/images/teachers/teacher8.jpg" },
+      { name: "Садықов С.", position: "Тарих", img: "/images/teachers/teacher9.jpg" },
+      { name: "Джаздықбаева М.Б.", position: "Педагогика", img: "/images/teachers/teacher10.jpg" },
+      { name: "Мергенбаев Е.П.", position: "Құқықтану", img: "/images/teachers/teacher11.jpg" },
+      { name: "Ауезов Б.Н.", position: "Педагогика", img: "/images/teachers/teacher12.jpg" },
+      { name: "Жумадуллаева А.А.", position: "Педагогика", img: "/images/teachers/teacher13.jpg" },
+      { name: "Исмаилова Ж.А.", position: "Қазақ тілі", img: "/images/teachers/teacher14.jpg" },
+      { name: "Сұлтанбек М.Ж.", position: "Педагогика", img: "/images/teachers/teacher15.jpg" },
+      { name: "Абдуллина Г.Т.", position: "Педагогика", img: "/images/teachers/teacher16.jpg" },
+      { name: "Кайбульдаева Г.А.", position: "Педагогика", img: "/images/teachers/teacher17.jpg" },
+      { name: "Джумадуллаева А.Н.", position: "Тарих", img: "/images/teachers/teacher18.jpg" },
+      { name: "Жаркинбаева Д.С.", position: "Психология", img: "/images/teachers/teacher19.jpg" },
+      { name: "Сахытжан С.О.", position: "Бастауыш сынып", img: "/images/teachers/teacher20.jpg" },
+      { name: "Айдарова Ф.К.", position: "Мектепке дейінгі", img: "/images/teachers/teacher21.jpg" },
+      { name: "Джаякбаева Д.С.", position: "Тарих", img: "/images/teachers/teacher22.jpg" },
+      { name: "Жаныкулов Н.О.", position: "Философия", img: "/images/teachers/teacher23.jpg" },
+      { name: "Матиева З.Ш.", position: "Ағылшын тілі", img: "/images/teachers/teacher24.jpg" },
+      { name: "Алиева Г.Д.", position: "Экономика", img: "/images/teachers/teacher25.jpg" },
+      { name: "Пернебек С.Н.", position: "Биология", img: "/images/teachers/teacher26.jpg" }
+    ]
+  },
+  en: {
+    director: { name: "Begaliyev B.B.", position: "Director", img: "/images/teachers/director.jpg" },
+    deputies: [
+      { name: "Begaliyeva Sh.M.", position: "Deputy for Academic and Production", img: "/images/teachers/deputy1.jpg" },
+      { name: "Ilyasova S.T.", position: "Deputy for Academic Affairs", img: "/images/teachers/deputy2.jpg" },
+      { name: "Erultan A.S.", position: "Deputy for Education", img: "/images/teachers/deputy3.jpg" },
+      { name: "Iskenderov K.I.", position: "Deputy for Practice", img: "/images/teachers/deputy4.jpg" }
+    ],
+    teachers: [
+      { name: "Domaeva G.A.", position: "Informatics", img: "/images/teachers/teacher1.jpg" },
+      { name: "Kenesbayeva G.A.", position: "Kazakh Language", img: "/images/teachers/teacher2.jpg" },
+      { name: "Koshan M.Zh.", position: "Mathematics", img: "/images/teachers/teacher3.jpg" },
+      { name: "Erdenova Zh.T.", position: "Russian Language", img: "/images/teachers/teacher4.jpg" },
+      { name: "Zhusupova G.A.", position: "Physical Education", img: "/images/teachers/teacher5.jpg" },
+      { name: "Akhmetov D.Zh.", position: "Physical Education", img: "/images/teachers/teacher6.jpg" },
+      { name: "Kuandykova Sh.B.", position: "Librarian", img: "/images/teachers/teacher7.jpg" },
+      { name: "Myrzaliev B.S.", position: "Economics", img: "/images/teachers/teacher8.jpg" },
+      { name: "Sadykov S.", position: "History", img: "/images/teachers/teacher9.jpg" },
+      { name: "Dzhazdykbaeva M.B.", position: "Pedagogy", img: "/images/teachers/teacher10.jpg" },
+      { name: "Mergenbaev E.P.", position: "Law", img: "/images/teachers/teacher11.jpg" },
+      { name: "Auezov B.N.", position: "Pedagogy", img: "/images/teachers/teacher12.jpg" },
+      { name: "Zhumadullayeva A.A.", position: "Pedagogy", img: "/images/teachers/teacher13.jpg" },
+      { name: "Ismailova Zh.A.", position: "Kazakh Language", img: "/images/teachers/teacher14.jpg" },
+      { name: "Sultanbek M.Zh.", position: "Pedagogy", img: "/images/teachers/teacher15.jpg" },
+      { name: "Abdullina G.T.", position: "Pedagogy", img: "/images/teachers/teacher16.jpg" },
+      { name: "Kaibuldaeva G.A.", position: "Pedagogy", img: "/images/teachers/teacher17.jpg" },
+      { name: "Zhumadullayeva A.N.", position: "History", img: "/images/teachers/teacher18.jpg" },
+      { name: "Zharkynbayeva D.S.", position: "Psychology", img: "/images/teachers/teacher19.jpg" },
+      { name: "Sakhytzhan S.O.", position: "Primary School", img: "/images/teachers/teacher20.jpg" },
+      { name: "Aidarova F.K.", position: "Preschool", img: "/images/teachers/teacher21.jpg" },
+      { name: "Dzhayakbayeva D.S.", position: "History", img: "/images/teachers/teacher22.jpg" },
+      { name: "Zhanykulov N.O.", position: "Philosophy", img: "/images/teachers/teacher23.jpg" },
+      { name: "Matieva Z.Sh.", position: "English", img: "/images/teachers/teacher24.jpg" },
+      { name: "Aliyeva G.D.", position: "Economics", img: "/images/teachers/teacher25.jpg" },
+      { name: "Pernebek S.N.", position: "Biology", img: "/images/teachers/teacher26.jpg" }
+    ]
+  }
+};
+const { director, deputies, teachers } = staff[lang];
+%>
+<div class="teachers-page">
+  <!-- Директор -->
+  <h2 class="section-title"><%= __('Администрация') %></h2>
+  <div class="director-row">
+    <div class="teacher-card director">
+      <img src="<%= director.img %>" alt="<%= director.name %>">
+      <div class="teacher-info">
+        <div class="teacher-name"><%= director.name %></div>
+        <div class="teacher-position"><%= director.position %></div>
+      </div>
+    </div>
+  </div>
+  <!-- Заместители -->
+  <div class="deputies-row">
+    <% deputies.forEach(dep => { %>
+      <div class="teacher-card deputy">
+        <img src="<%= dep.img %>" alt="<%= dep.name %>">
+        <div class="teacher-info">
+          <div class="teacher-name"><%= dep.name %></div>
+          <div class="teacher-position"><%= dep.position %></div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+  <!-- Преподаватели -->
+  <h2 class="section-title"><%= __('Преподаватели') %></h2>
+  <div class="teachers-grid">
+    <% teachers.forEach((t, i) => { %>
+      <div class="teacher-card">
+        <img src="<%= t.img %>" alt="<%= t.name %>">
+        <div class="teacher-info">
+          <div class="teacher-name"><%= t.name %></div>
+          <div class="teacher-position"><%= t.position %></div>
+        </div>
+      </div>
+      <% if ((i+1) % 5 === 0) { %><div class="teachers-row-break"></div><% } %>
+    <% }) %>
+  </div>
+</div>

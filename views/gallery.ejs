@@ -1,2 +1,86 @@
-<h2><%= __('gallery.title') %></h2>
-<p><%= __('gallery.text') %></p> 
+<h2 style="text-align:center;"><%= __('gallery.title') %></h2>
+<p style="text-align:center;"><%= __('gallery.text') %></p>
+
+<style>
+  #gallery-image {
+    transition: opacity 0.5s cubic-bezier(.4,0,.2,1);
+    opacity: 1;
+  }
+  #gallery-image.fade-out {
+    opacity: 0;
+  }
+  #gallery-image.fade-in {
+    opacity: 1;
+  }
+</style>
+
+<div id="gallery-slider" style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:400px; margin-top:2rem;">
+  <div style="display:flex; align-items:center; gap:2rem;">
+    <button id="gallery-prev" aria-label="Previous" style="font-size:2rem; background:none; border:none; cursor:pointer;">&#8592;</button>
+    <img id="gallery-image" src="/images/specialties/accounting.png" alt="gallery" style="max-width:400px; max-height:300px; border-radius:12px; box-shadow:0 2px 12px #0001;">
+    <button id="gallery-next" aria-label="Next" style="font-size:2rem; background:none; border:none; cursor:pointer;">&#8594;</button>
+  </div>
+  <div id="gallery-caption" style="margin-top:1rem; font-size:1.1rem; color:#6c1c30; font-weight:500; text-align:center;"></div>
+</div>
+
+<script>
+  const galleryData = [
+    {src: '/images/gallery/hall2.jpeg', caption: 'Холл'},
+    {src: '/images/gallery/out1.jpeg', caption: 'Эстетично оформенное здание колледжа с современным фасадом и ухоженной территорией, создающим привлекательный внешний облик учебного заведения.'},
+    {src: '/images/gallery/hall1.jpeg', caption: 'Холл колледжа'},
+    {src: '/images/gallery/edu1.jpeg', caption: 'Учебные кабинеты колледжа с новыми партами и стульями, оформленные в современном стиле, создающими комфортные условия для обучения.'},
+    {src: '/images/gallery/edu2.jpeg', caption: 'Учебные кабинеты колледжа с новыми партами и стульями, оформленные в современном стиле, создающими комфортные условия для обучения.'},
+{src: '/images/gallery/edu3.jpeg', caption: 'Учебные кабинеты колледжа с новыми партами и стульями, оформленные в современном стиле, создающими комфортные условия для обучения.'},
+    {src: '/images/gallery/edu4.jpeg', caption: 'Учебные кабинеты колледжа с новыми партами и стульями, оформленные в современном стиле, создающими комфортные условия для обучения.'},
+    {src: '/images/gallery/edu5.jpeg', caption: 'Учебные кабинеты колледжа с новыми партами и стульями, оформленные в современном стиле, создающими комфортные условия для обучения.'},
+    {src: '/images/gallery/edu6.jpeg', caption: 'Учебные кабинеты колледжа с новыми партами и стульями, оформленные в современном стиле, создающими комфортные условия для обучения.'},
+    {src: '/images/gallery/edu7.jpeg', caption: 'Учебные кабинеты колледжа с новыми партами и стульями, оформленные в современном стиле, создающими комфортные условия для обучения.'},
+          {src: '/images/gallery/edu8.jpeg', caption: 'Учебные кабинеты колледжа с новыми партами и стульями, оформленные в современном стиле, создающими комфортные условия для обучения.'},
+          {src: '/images/gallery/edu9.jpeg', caption: 'Учебные кабинеты колледжа с новыми партами и стульями, оформленные в современном стиле, создающими комфортные условия для обучения.'},
+          {src: '/images/gallery/edu10.jpeg', caption: 'Учебные кабинеты колледжа с новыми партами и стульями, оформленные в современном стиле, создающими комфортные условия для обучения.'},
+          {src: '/images/gallery/edu11.jpeg', caption: 'Учебные кабинеты колледжа с новыми партами и стульями, оформленные в современном стиле, создающими комфортные условия для обучения.'},
+          {src: '/images/gallery/dir1.jpeg', caption: 'Кабинет директора колледжа с элегантным современным дизайном и уютной атмосферой, отражающей уважительное и доброжелательное отношение к посетителям.'},
+          {src: '/images/gallery/dir2.jpeg', caption: 'Кабинет директора колледжа с элегантным современным дизайном и уютной атмосферой, отражающей уважительное и доброжелательное отношение к посетителям.'},
+          {src: '/images/gallery/lab1.jpeg', caption: 'Современно оснащённые учебные лаборатории и мастерские, идеально подходящие для прохождения практики и отработки профессиональных навыков студентами.'},
+          {src: '/images/gallery/library1.jpeg', caption: 'Светлая библиотека колледжа с уютной атмосферой, большим выбором книг и стильным интерьером, способствующим комфортному обучению и чтению.'},
+    {src: '/images/gallery/out1.jpeg', caption: 'Эстетично оформенное здание колледжа с современным фасадом и ухоженной территорией, создающим привлекательный внешний облик учебного заведения.'},
+          {src: '/images/gallery/pc1.jpeg', caption: 'Кабинет информатики колледжа, оснащённый современными компьютерами и всем необходимым оборудованием для проведения занятий по IT-дисциплинам.'},
+          {src: '/images/gallery/sport1.jpeg', caption: 'Современный спортивный зал колледжа с деревянным паркетом, ярким освещением и продуманным дизайном, создающим комфортные условия для тренировок и соревнований.'},
+          {src: '/images/gallery/sport2.jpeg', caption: 'Современный спортивный зал колледжа с деревянным паркетом, ярким освещением и продуманным дизайном, создающим комфортные условия для тренировок и соревнований.'},
+          {src: '/images/gallery/sport3.jpeg', caption: 'Современный спортивный зал колледжа с деревянным паркетом, ярким освещением и продуманным дизайном, создающим комфортные условия для тренировок и соревнований.'},
+          {src: '/images/gallery/tech1.jpeg', caption: 'Современно оснащённые учебные лаборатории и мастерские, идеально подходящие для прохождения практики и отработки профессиональных навыков студентами.'},
+          {src: '/images/gallery/tech2.jpeg', caption: 'Современно оснащённые учебные лаборатории и мастерские, идеально подходящие для прохождения практики и отработки профессиональных навыков студентами.'},
+          {src: '/images/gallery/tech3.jpeg', caption: 'Современно оснащённые учебные лаборатории и мастерские, идеально подходящие для прохождения практики и отработки профессиональных навыков студентами.'},
+          {src: '/images/gallery/tech4.jpeg', caption: 'Современно оснащённые учебные лаборатории и мастерские, идеально подходящие для прохождения практики и отработки профессиональных навыков студентами.'},
+  ];
+  let current = 0;
+  const img = document.getElementById('gallery-image');
+  const caption = document.getElementById('gallery-caption');
+  const prev = document.getElementById('gallery-prev');
+  const next = document.getElementById('gallery-next');
+
+  function show(idx) {
+    current = (idx + galleryData.length) % galleryData.length;
+    // Анимация: плавное исчезновение
+    img.classList.add('fade-out');
+    setTimeout(() => {
+      img.src = galleryData[current].src;
+      // --- fadeIn для caption ---
+      caption.style.opacity = 0;
+      caption.style.animation = 'none';
+      void caption.offsetWidth; // reflow
+      caption.textContent = galleryData[current].caption;
+      caption.style.animation = '';
+      caption.style.opacity = '';
+      // --- конец fadeIn для caption ---
+      img.classList.remove('fade-out');
+      img.classList.add('fade-in');
+      setTimeout(() => img.classList.remove('fade-in'), 500);
+    }, 400);
+  }
+  prev.onclick = () => show(current - 1);
+  next.onclick = () => show(current + 1);
+  // Инициализация
+  img.onload = () => { caption.textContent = galleryData[current].caption; };
+  show(current);
+</script> 

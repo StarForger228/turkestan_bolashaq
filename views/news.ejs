@@ -1,2 +1,60 @@
-<h2><%= __('news.title') %></h2>
-<p><%= __('news.text') %></p> 
+<h2 class="section-title"><%= __('news.title') %></h2>
+<p class="section-subtitle"><%= __('news.text') %></p>
+
+<%
+const news = [
+  {
+    images: ["/images/gallery/news2.jpeg", "/images/gallery/news3.jpeg", "/images/gallery/lab1.jpeg"],
+    short: "Открытие нового учебного корпуса.",
+    full: "Открытие нового учебного корпуса состоялось 1 сентября. В мероприятии приняли участие преподаватели, студенты и гости колледжа. Новый корпус оснащён современными лабораториями и аудиториями."
+  },
+  {
+    images: ["/images/gallery/stud1.jpeg", "/images/gallery/stud2.jpeg"],
+    short: "Победа на городском конкурсе.",
+    full: "Студенты колледжа заняли первое место на городском конкурсе научных проектов. Поздравляем победителей и их научных руководителей с отличным результатом!"
+  },
+  {
+    images: ["/images/gallery/news1.jpeg", "/images/gallery/news8.jpeg", "/images/gallery/news13.jpeg"],
+    short: "День открытых дверей.",
+    full: "В колледже прошёл день открытых дверей для абитуриентов и их родителей. Гости познакомились с преподавателями, учебными программами и инфраструктурой колледжа."
+  }
+];
+%>
+<div class="news-panel">
+  <% news.forEach((item, idx) => { %>
+    <div class="news-card" data-idx="<%= idx %>">
+      <div class="news-image-slider" id="slider-<%= idx %>">
+        <% item.images.forEach((img, i) => { %>
+          <img src="<%= img %>" class="news-img<%= i === 0 ? ' active' : '' %>" style="transition: opacity 1s;">
+        <% }) %>
+      </div>
+      <div class="news-desc">
+        <div class="news-short"><%= item.short %></div>
+        <div class="news-full"><%= item.full %></div>
+      </div>
+    </div>
+  <% }) %>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sliders = document.querySelectorAll('.news-image-slider');
+  sliders.forEach((slider, idx) => {
+    const imgs = slider.querySelectorAll('.news-img');
+    let current = 0;
+    setInterval(() => {
+      imgs[current].classList.remove('active');
+      current = (current + 1) % imgs.length;
+      imgs[current].classList.add('active');
+    }, 5000);
+  });
+
+  document.querySelectorAll('.news-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      card.classList.add('open');
+    });
+    card.addEventListener('mouseleave', function() {
+      card.classList.remove('open');
+    });
+  });
+});
+</script> 

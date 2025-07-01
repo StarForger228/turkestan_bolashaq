@@ -5,6 +5,7 @@ const path = require('path');
 const i18n = require('i18n');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
+const fs = require('fs');
 
 const app = express();
 
@@ -74,6 +75,51 @@ app.get('/lang/:locale', (req, res) => {
     res.redirect(referer);
   } else {
     res.redirect('/');
+  }
+});
+
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const OpenAI = require("openai");
+
+app.use(cors());
+app.use(bodyParser.json());
+
+const openai = new OpenAI({
+  apiKey: "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",
+  baseURL: "https://openrouter.ai/api/v1"
+});
+
+// Функция для получения system prompt по языку
+function getSystemPrompt(locale) {
+  let lang = (locale || 'ru').toLowerCase();
+  if (!['ru','kz','en'].includes(lang)) lang = 'ru';
+  try {
+    return fs.readFileSync(path.join(__dirname, `prompts/chatbot-system-prompt.${lang}.txt`), 'utf-8');
+  } catch (e) {
+    // fallback на русский
+    return fs.readFileSync(path.join(__dirname, 'prompts/chatbot-system-prompt.ru.txt'), 'utf-8');
+  }
+}
+
+app.post("/api/chat", async (req, res) => {
+  const userMessage = req.body.message;
+  // Определяем язык из cookie/lang, query, или defaultLocale
+  let locale = req.cookies?.lang || req.query?.lang || req.getLocale?.() || 'ru';
+  const systemPrompt = getSystemPrompt(locale);
+  try {
+    const response = await openai.chat.completions.create({
+      model: "mistralai/mistral-7b-instruct",
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userMessage }
+      ]
+    });
+    const botReply = response.choices[0].message.content;
+    res.json({ response: botReply });
+  } catch (error) {
+    console.error("❌ Ошибка OpenAI:", error.response?.data || error.message || error);
+    res.status(500).json({ response: "Произошла ошибка. Попробуйте позже." });
   }
 });
 

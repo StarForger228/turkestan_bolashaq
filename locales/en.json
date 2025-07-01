@@ -62,7 +62,17 @@
 		"itm_subjects": "specialties.itm_subjects",
 		"ite_description": "specialties.ite_description",
 		"ite_subjects": "specialties.ite_subjects",
-		"apply_now": "specialties.apply_now"
+		"apply_now": "Apply Now",
+		"law": {"title": "Law", "slogan": "Know the law — build a just tomorrow!"},
+		"banking": {"title": "Banking and Insurance", "slogan": "Manage finances — create a secure future!"},
+		"accounting": {"title": "Accounting and Audit", "slogan": "Your accuracy is the key to business success!"},
+		"software": {"title": "Software Engineering", "slogan": "Create the digital world — program your future!"},
+		"primary_education": {"title": "Primary Education Pedagogy", "slogan": "Be the first teacher they will always remember!"},
+		"preschool": {"title": "Preschool Education", "slogan": "Grow together with those who take their first steps!"},
+		"sport": {"title": "Physical Education and Sport", "slogan": "Strong body — strong spirit: raise champions!"},
+		"food": {"title": "Food Service Management", "slogan": "The taste of the profession is in caring for others!"},
+		"welding": {"title": "Welding", "slogan": "Joining metal — building the future!"},
+		"vehicles": {"title": "Vehicle Maintenance and Operation", "slogan": "Move forward — maintain with intelligence!"}
 	},
 	"students": {
 		"title": "For Students",
@@ -113,5 +123,6 @@
 		"cta_title": "Ready to Start Your Journey?",
 		"cta_text": "Apply now and become part of our community",
 		"apply_now": "Apply Now"
-	}
+	},
+	"Введите Ваш вопрос": "Введите Ваш вопрос"
 }

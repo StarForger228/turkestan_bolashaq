@@ -11,35 +11,35 @@
   <header>
     <div class="container">
       <div class="header-content">
-        <a href="/" class="logo">Туркестан Болашак</a>
+        <a href="/" class="logo" style="display: flex; align-items: center; gap: 10px; margin-right: 40px">
+          <img src="/images/logo.png" alt="Логотип" style="height:48px;">
+          <span>Туркестан Болашак</span>
+        </a>
         <nav>
           <ul>
-            <li><a href="/"><%= __('nav.home') %></a></li>
-            <li><a href="/about"><%= __('nav.about') %></a></li>
-            <li><a href="/activity"><%= __('nav.activity') %></a></li>
             <li><a href="/specialties"><%= __('nav.specialties') %></a></li>
-            <li><a href="/students"><%= __('nav.students') %></a></li>
             <li><a href="/applicants"><%= __('nav.applicants') %></a></li>
+            <li><a href="/admin"><%= __('nav.admin') %></a></li>
             <li><a href="/news"><%= __('nav.news') %></a></li>
             <li><a href="/gallery"><%= __('nav.gallery') %></a></li>
             <li><a href="/teachers"><%= __('nav.teachers') %></a></li>
-            <li><a href="/contests"><%= __('nav.contests') %></a></li>
-            <li><a href="/contacts"><%= __('nav.contacts') %></a></li>
           </ul>
         </nav>
         <div class="language-switcher">
-          <a href="/lang/ru" class="lang-btn <%= locale === 'ru' ? 'active' : '' %>">RU</a>
-          <a href="/lang/kz" class="lang-btn <%= locale === 'kz' ? 'active' : '' %>">KZ</a>
-          <a href="/lang/en" class="lang-btn <%= locale === 'en' ? 'active' : '' %>">EN</a>
+          <button id="lang-toggle" class="lang-globe-btn">
+            <img src="/images/globe.svg" alt="Language" style="width: 28px; height: 28px; margin-left: 40px">
+          </button>
+          <div id="lang-menu" class="lang-menu hidden">
+            <a href="/lang/ru" class="lang-btn <%= locale === 'ru' ? 'active' : '' %>">RU</a>
+            <a href="/lang/kz" class="lang-btn <%= locale === 'kz' ? 'active' : '' %>">KZ</a>
+            <a href="/lang/en" class="lang-btn <%= locale === 'en' ? 'active' : '' %>">EN</a>
+          </div>
         </div>
       </div>
     </div>
   </header>
   <main>
-    <aside class="banner">
-      <img src="/banner/banner-placeholder.png" alt="Баннер" style="width:80px; height:300px;">
-      <!-- 160x600 мм = 480x1800 px @300dpi, но для web делаем пропорционально меньше -->
-    </aside>
+    <aside class="banner"></aside>
     <section class="content">
       <%- body %>
     </section>
@@ -48,35 +48,48 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3><%= __('footer.about') %></h3>
-          <a href="/about"><%= __('nav.about') %></a>
           <a href="/activity"><%= __('nav.activity') %></a>
           <a href="/specialties"><%= __('nav.specialties') %></a>
         </div>
         <div class="footer-section">
-          <h3><%= __('footer.students') %></h3>
           <a href="/students"><%= __('nav.students') %></a>
           <a href="/applicants"><%= __('nav.applicants') %></a>
           <a href="/teachers"><%= __('nav.teachers') %></a>
         </div>
         <div class="footer-section">
-          <h3><%= __('footer.media') %></h3>
           <a href="/news"><%= __('nav.news') %></a>
           <a href="/gallery"><%= __('nav.gallery') %></a>
-          <a href="/contests"><%= __('nav.contests') %></a>
         </div>
         <div class="footer-section">
-          <h3><%= __('footer.contact') %></h3>
-          <a href="/contacts"><%= __('nav.contacts') %></a>
           <p>Email: info@bolashak.edu.kz</p>
           <p>Тел: +7 (7252) 123-456</p>
+          <p>г.Туркестан, ул.Кожанова, 15</p>
+        </div>
+        <div class="footer-section" style="min-width:220px;max-width:340px;">
+          <div style="margin-top: 0;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2903.4456860978125!2d68.26231637576495!3d43.30492877112067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4200c3e472691805%3A0xb046c91c03ceb0b3!2z0JLRi9GB0YjQuNC5INC80L3QvtCz0L7Qv9GA0L7RhNC40LvRjNC90YvQuSDQutC-0LvQu9C10LTQtiDQotGD0YDQutC10YHRgtCw0L0t0JHQvtC70LDRiNCw0Lo!5e0!3m2!1sru!2skz!4v1751283581976!5m2!1sru!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 Туркестан Болашак. <%= __('footer.rights') %></p>
+        <p>&copy; 2025 Туркестан Болашак. <%= __('footer.rights') %></p>
       </div>
     </div>
   </footer>
+  <!-- Chatbot Icon and Window -->
+  <div id="chatbot-container">
+    <div id="chatbot-toggle">
+      <img src="/images/chatbot-icon.png" alt="Chatbot" />
+    </div>
+    <div id="chatbot-window" class="hidden">
+      <div id="chatbot-messages"></div>
+      <form id="chatbot-form">
+        <input type="text" id="chatbot-input" placeholder="<%= __('Введите Ваш вопрос') %>" autocomplete="off" />
+        <button type="submit">&#9658;</button>
+      </form>
+    </div>
+  </div>
   <script src="/js/animations.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>
