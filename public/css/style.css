@@ -939,3 +939,26 @@ main {
     max-width: 95vw;
   }
 }
+
+/* --- Banner mobile adaptation --- */
+@media (max-width: 600px) {
+  .banner {
+    height: 60px;
+    min-height: 0;
+    width: 100vw;
+    max-width: 100vw;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+  }
+  .banner img {
+    height: 60px;
+    width: 100vw;
+    object-fit: cover;
+  }
+}
+@media (max-width: 400px) {
+  .banner {
+    display: none;
+  }
+}
